@@ -13,15 +13,15 @@ class Home extends Component{
         }
     }
     render () {
-        const { dispatch } = this.props
+        const { dispatch, visibleTodos } = this.props
         return (
-            <div className="home" onClick={() => {
-                dispatch(addTodo('111'))}}>
+            <div className="home">
                 <QueueAnim type="left">
-                    <Title key="0"/>
+                    <Title key="0" todos={visibleTodos}/>
                 </QueueAnim>
                 <QueueAnim type="right">
-                    <Content key="0" />
+                    <Content key="0" onAddClick={text => {
+                dispatch(addTodo(text))}}/>
                 </QueueAnim>
             </div>
         )

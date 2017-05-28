@@ -9,7 +9,11 @@ export default class Title extends Component{
     render () {
         return (
             <div className="left_title">
-                e32e3
+                <ul>
+                    {this.props.todos.map((todo, index) =>
+                    <li key={index}>{todo.text}</li>
+                    )}
+                </ul>
             </div>
         )
     }
