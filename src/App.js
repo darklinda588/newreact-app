@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import createBrowserHistory from 'history/createBrowserHistory'
-import { Menu, Icon } from 'antd';
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+import React, { Component } from 'react'
+// import createBrowserHistory from 'history/createBrowserHistory'
+import { Route } from 'react-router-dom'
+import Home from './containers/Home'
+import { Menu, Icon } from 'antd'
+const SubMenu = Menu.SubMenu
+const MenuItemGroup = Menu.ItemGroup
 // const history = createBrowserHistory()
 
 export default class App extends Component {
@@ -14,9 +16,8 @@ export default class App extends Component {
   }
   handleClick = (e) => {
     // console.log('click ', e)
-    // history.push('/' + e.key)
-    // console.log(this.props.history)
-    createBrowserHistory().push(e.key)
+    this.props.history.push(e.key)
+    // createBrowserHistory().push(e.key)
     this.setState({
       current: e.key,
     })
@@ -29,6 +30,7 @@ export default class App extends Component {
             selectedKeys={[this.state.current]}
             mode="horizontal"
             theme="dark"
+            className="menuNav"
           >
             <Menu.Item key="/">
               <Icon type="mail" />Navigation One
@@ -50,6 +52,7 @@ export default class App extends Component {
               Navigation Four - Link
             </Menu.Item>
           </Menu>
+          <Route exact path="/" component={Home}/>
       </div>
     )
   }

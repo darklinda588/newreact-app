@@ -5,11 +5,13 @@
   "dependencies": {
     "antd": "^2.10.2",
     "babel-plugin-import": "^1.2.0",
+    "echarts": "^3.6.1",
     "rc-queue-anim": "^1.0.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.6.0"
   },
   "devDependencies": {
